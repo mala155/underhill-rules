@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Il mio sito web</title>
+	<style>
+		.banner {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 80%;
+			height: 80%;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px #aaa;
+			z-index: 9999;
+			overflow: auto;
+		}
+		
+		.banner.active {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<h1>Regole underhill</h1>
+	<p>rispetta tutte le regole</p>
+	<button onclick="openBanner(1)">1</button>
+	<button onclick="openBanner(2)">2</button>
+	<button onclick="openBanner(3)">3</button>
+	<div id="banner1" class="banner">
+		<h2>Regola numero 1</h2>
+		<p>In questo server è SEVERAMENTE vietato l'utilizzo della parola
+            ﻿@everyone﻿ escluso chi ha ricevuto l'autorizzazione da parte di un @👑 Roasters . La conseguenza sarà un time out di un giorno.</p>
+		<button onclick="closeBanner()">Chiudi</button>
+	</div>
+	
+	<div id="banner2" class="banner">
+		<h2>Regola numero 2</h2>
+		<p>È vietata qualsiasi forma di porno, gore o contenuti simili. La conseguenza sarà il ban. </p>
+		<button onclick="closeBanner()">Chiudi</button>
+	</div>
+	
+	<div id="banner3" class="banner">
+		<h2>Regola numero 3</h2>
+		<p>È vietato qualsiasi tipo di insulto rivolto ai @🔨Moderatori , a lo @⛑️ Staff o a un @👑 Roasters  . La consequenza sarà la @🗒️ 🗒️ 🗒️ : Precendente 3 .
+            ﻿.</p>
+		<button onclick="closeBanner()">Chiudi</button>
+	</div>
+	
+	<script>
+		function openBanner(num) {
+			var banner = document.getElementById("banner" + num);
+			banner.classList.add("active");
+		}
+		
+		function closeBanner() {
+			var banners = document.getElementsByClassName("banner");
+			for (var i = 0; i < banners.length; i++) {
+				banners[i].classList.remove("active");
+			}
+		}
+	</script>
+</body>
+</html>
+
